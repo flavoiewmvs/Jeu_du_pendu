@@ -6,12 +6,19 @@
 class Pendu():
 
     lettres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    fichier = "pendu.txt"
 
     def __init__(self):
         self.mots_fait = []
         self.resultats_fait = []
         self.mot = "PROGRAMMATION"
         self.mes_lettres = Pendu.lettres
+        self.pendu = []
+        with open(Pendu.fichier,"r") as f:
+            for ligne in f.readlines():
+                self.pendu.append(list(ligne.strip("\n")))
+
+
 
     def trouve_lettre(self,lettre):
         """

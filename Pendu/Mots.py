@@ -9,6 +9,8 @@ class Mots():
     def __init__(self):
         self.mots = []
         self.nb=0
+        self.mot_courant=""
+        self.mot_masque=[]
         self.mots_fait = []
         with open(Mots.fichier,"r") as f:
             for mot_fichier in f.readlines():
@@ -21,7 +23,6 @@ class Mots():
         Cette méthone retourne un mot
         Args:
 
-
         Returns:
             (string) mot
         """
@@ -31,9 +32,12 @@ class Mots():
             if self.mots[pos] not in self.mots_fait:
                 self.mots_fait.append(self.mots[pos])
                 mot_valide = True
-
+        self.mot_courant=self.mots[pos]
+        self.mot_masque=list("_"*(len(self.mot_courant)-1))
         return self.mots[pos]
 
 if __name__ == "__main__":
     mes_mots = Mots()
-    print(mes_mots.donne_mot())
+    mes_mots.donne_mot()
+    print(mes_mots.mot_courant)
+    print(" ".join(mes_mots.mot_masque))
