@@ -1,12 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-
-
-class Pendu():
-    lettres = "ABCDEFGHIJKLMNOPQRSTUVWXYZÀÈÂÊÔÛÉËÏÇ"
-
-
+from Pendu import  Pendu
 
 
 
