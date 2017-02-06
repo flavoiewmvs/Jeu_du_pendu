@@ -14,7 +14,7 @@ class Mots():
         self.mots_fait = []
         with open(Mots.fichier,"r") as f:
             for mot_fichier in f.readlines():
-                self.mots.append(mot_fichier.strip("\n"))
+                self.mots.append(mot_fichier.strip(" \t\n\r"))
                 self.nb += 1
 
 
@@ -33,7 +33,7 @@ class Mots():
                 self.mots_fait.append(self.mots[pos])
                 mot_valide = True
         self.mot_courant=self.mots[pos]
-        self.mot_masque=list("_"*(len(self.mot_courant)-1))
+        self.mot_masque=list("_"*len(self.mot_courant))
         return self.mots[pos]
 
 if __name__ == "__main__":
